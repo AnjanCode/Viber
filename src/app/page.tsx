@@ -1,9 +1,12 @@
-import { Button } from "@/components/ui/button";
 
-export default function Home() {
+
+const Home = async () => {
+  
   return (
-    <div>
-      <Button variant={'destructive'}>Click Me</Button>
+    <div className="text-rose-500">
+      
     </div>
-  );
+  )
 }
+
+export default Home;
