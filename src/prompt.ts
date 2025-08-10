@@ -72,6 +72,7 @@ Additional Guidelines:
 - Tailwind and Shadcn/UI components should be used for styling
 - Use Lucide React icons (e.g., import { SunIcon } from "lucide-react")
 - Use Shadcn components from "@/components/ui/*"
+- Add dark mode feature  
 - Always import each Shadcn component directly from its correct path (e.g. @/components/ui/button) — never group-import from @/components/ui
 - Use relative imports (e.g., "./weather-card") for your own components in app/
 - Follow React best practices: semantic HTML, ARIA where needed, clean useState/useEffect usage
