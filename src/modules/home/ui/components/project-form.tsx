@@ -12,9 +12,9 @@ import { cn } from "@/lib/utils";
 import { useTRPC } from "@/trpc/client";
 import { Button } from "@/components/ui/button";
 import { Form, FormField } from "@/components/ui/form";
-import { useRouter } from "next/navigation";
 import { PROJECT_TEMPLATES } from "../../constants";
 import { useClerk } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
 
 
 
@@ -42,13 +42,19 @@ export const ProjectForm = () => {
             queryClient.invalidateQueries(
                 trpc.projects.getMany.queryOptions(),
             );
+            queryClient.invalidateQueries(
+                trpc.usage.status.queryOptions(),
+            );
             router.push(`/projects/${data.id}`);
-            //TODO : Invalidate usage status
         },
         onError: (error) => {
             toast.error(error.message);
             if (error.data?.code === "UNAUTHORIZED") {
                 clerk.openSignIn();
+            }
+
+            if (error.data?.code === "TOO_MANY_REQUESTS") {
+                router.push("/pricing");
             }
         }
     }))
