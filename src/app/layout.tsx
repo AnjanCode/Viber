@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next"
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { TRPCReactProvider } from "@/trpc/client";
@@ -48,6 +49,7 @@ export default function RootLayout({
             >
               <Toaster />
               {children}
+              <Analytics />
             </ThemeProvider>
           </body>
         </html>
