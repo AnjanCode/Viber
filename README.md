@@ -1,10 +1,10 @@
-# Viber
+# Viber AI Website Builder
 
 ## 1. Title of the Project
-Viber
+Viber AI Website Builder
 
 ## 2. Project Description
-Viber is a modern, production‑ready web application built with Next.js and TypeScript. It provides a scalable foundation for building authenticated, data‑driven user experiences with a strong focus on developer ergonomics, performance, and accessibility.
+Viber AI Website Builder is a modern, production‑ready web application built with Next.js and TypeScript. It empowers users to create websites through a user-friendly AI-powered chat interface, automatically generating code and layouts based on user input. Viber provides a scalable foundation for building authenticated, data‑driven user experiences with a strong focus on developer ergonomics, performance, and accessibility.
 
 A live deployment is available at: https://viber-five.vercel.app
 
@@ -84,78 +84,37 @@ npm run dev
 ### Optional: Run with Docker
 Build and run the application locally using Docker (ensure your .env is configured):
 ```bash
-# Build the image
-docker build -t viber:local .
+# Build the Docker image
+docker build -t viber-app .
 
-# Run the container (exposes port 3000)
-docker run --env-file ./.env -p 3000:3000 viber:local
+# Run the container
+docker run -p 3000:3000 --env-file .env viber-app
 ```
 
-## 5. Usage Guidelines
-
-### Local Development
-```bash
-# Start dev server with Turbopack
-npm run dev
-
-# Lint the codebase
-npm run lint
-
-# Open Prisma Studio (DB inspector)
-npx prisma studio
-```
-- Access the app at http://localhost:3000
-- To enable sign‑in/sign‑up, configure Clerk keys in your environment variables and set your application URL in Clerk.
-
-### Production Build
-```bash
-# Create an optimized production build
-npm run build
-
-# Start the production server
-npm run start
-```
-
-### Notes
-- tRPC provides type‑safe APIs between server and client. Endpoints are organized within the codebase and consumed via TanStack React Query.
-- Prisma manages schema and migrations. Update your schema.prisma as needed and run migrations with `npx prisma migrate dev`.
+## 5. Features
+- Authentication and user management via Clerk
+- Type‑safe end‑to‑end APIs using tRPC
+- Database access via Prisma with generated types and migrations
+- Modern, accessible UI using Radix UI and Tailwind CSS
+- Dark/Light theme support with next-themes
+- Data fetching and caching with TanStack React Query
+- Charts and visualizations with Recharts
+- Carousel and interactive components (Embla, CMDK, etc.)
+- Production‑grade rate limiting (rate-limiter-flexible)
+- Ready for serverless deployment (Vercel) and containerization (Dockerfile)
 
 ## 6. Contributing
-
-We welcome contributions! Please follow the steps below:
-
-1) Fork the repository and create a feature branch:
-```bash
-git checkout -b feat/your-feature-name
-```
-
-2) Make your changes and ensure the project builds and lints:
-```bash
-npm run lint
-npm run build
-```
-
-3) Commit with clear, descriptive messages:
-```bash
-git add .
-git commit -m "feat: add <concise description>"
-```
-
-4) Push your branch and open a Pull Request against the main branch. In your PR description:
-- Explain the motivation and context for the change
-- Include screenshots or recordings for UI changes
-- Note any required environment variable or migration changes
-- Reference related issues (if any)
-
-5) Be responsive to review feedback and keep commit history clean (squash if requested).
-
-For larger changes, consider opening an issue first to discuss design and scope.
+Contributions are welcome! Please follow these steps:
+1. Fork the repository and create a branch.
+2. Make your changes with proper documentation.
+3. Submit a pull request describing your modifications.
+4. Participate in discussion for feedback and improvements.
 
 ## 7. License
 No license file is currently provided. All rights reserved by the repository owner. If you intend to use or redistribute this software, please open an issue to discuss licensing. The owner may choose to add a license (e.g., MIT) in the future.
 
 ## 8. Contact Information
-- Repository Owner: @AnjanCode (https://github.com/AnjanCode)
+- Repository Owner: [@AnjanCode](https://github.com/AnjanCode)
 - Project Homepage: https://viber-five.vercel.app
 - For questions or support, please open an issue in this repository.
 
